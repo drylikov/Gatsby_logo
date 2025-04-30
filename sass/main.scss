@@ -1,0 +1,102 @@
+// colors
+$bg-color: #2b1742;
+$circle-color: #662f99;
+$line-color: #ffffff;
+$shadow-color: #000000;
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: $bg-color;
+  overflow: hidden;
+
+  * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+    }
+  }
+}
+
+.circle {
+  width: 58vmin;
+  height: 58vmin;
+  background: $circle-color;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 1vmin $shadow-color);
+
+  &::before {
+    width: 37vmin;
+    height: 37vmin;
+    background: $circle-color;
+    top: 6.4vmin;
+    left: 6.4vmin;
+    border: 4vmin solid $line-color;
+    border-radius: 50%;
+  }
+}
+
+.line {
+  &-1 {
+    width: 4.1vmin;
+    height: 37vmin;
+    background: $line-color;
+    top: 14.5vmin;
+    left: -13.5vmin;
+    transform: rotate(135deg);
+
+    &::before {
+      width: 4.2vmin;
+      height: 42vmin;
+      background: $circle-color;
+      top: -2vmin;
+      left: 4.1vmin;
+    }
+
+    &::after {
+      width: 3vmin;
+      height: 20vmin;
+      background: $line-color;
+      top: 9vmin;
+      left: 8.3vmin;
+    }
+  }
+
+  &-2 {
+    width: 8vmin;
+    height: 10vmin;
+    background: $circle-color;
+    top: -15.5vmin;
+    left: 39vmin;
+    transform: rotate(140deg);
+
+    &::before {
+      width: 8vmin;
+      height: 5vmin;
+      background: $circle-color;
+      top: -2.5vmin;
+      left: 2vmin;
+      transform: rotate(40deg);
+    }
+
+    &::after {
+      width: 14.2vmin;
+      height: 4.2vmin;
+      background: $line-color;
+      top: -1.8vmin;
+      left: 6.3vmin;
+      border-radius: 5vmin 0 0 0;
+      transform: rotate(40deg);
+    }
+  }
+}
